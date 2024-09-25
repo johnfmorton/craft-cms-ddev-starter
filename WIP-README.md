@@ -26,7 +26,7 @@ rm -rf .git
 Last, clean up and set some default files for use:
 
 ```shell
-cp .env.example .env
+cp .env.example.dev .env
 mv -f composer.json.default composer.json
 mv -f .gitignore.default .gitignore
 rm CHANGELOG.md && rm LICENSE.md && rm README.md
