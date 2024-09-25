@@ -6,23 +6,9 @@ The installation process is **heavily inspired** by [Craft CMS 4 Starter Kit](ht
 
 ## Installation
 
-### Option 1: With Composer (recommended)
+### With Git CLI
 
-If you have [Composer](https://getcomposer.org/) installed on your local machine,
-you can use `create-project` to pull the latest tagged release.
-
-Open terminal prompt, and run:
-
-```shell
-composer create-project johnfmorton/craft-cms-ddev-starter PATH --no-install
-```
-
-Make sure that `PATH` is a **new** or **existing and empty** folder.
-
-
-### Option 2: With Git CLI
-
-Alternatively you can clone the repo via the Git CLI:
+You can clone the repo via the Git CLI:
 
 ```shell
 git clone git@github.com:johnfmorton/craft-cms-ddev-starter.git PATH
@@ -94,3 +80,21 @@ To begin development with Vite's dev server & HMR, run:
 ```shell
 make dev
 ```
+
+
+## TO DO - but not working yet
+
+## Installing with composer
+
+### Option 1: With Composer (recommended)
+
+If you have [Composer](https://getcomposer.org/) installed on your local machine,
+you can use `create-project` to pull the latest tagged release.
+
+Open terminal prompt, and run:
+
+```shell
+composer create-project johnfmorton/craft-cms-ddev-starter PATH --no-install
+```
+
+Make sure that `PATH` is a **new** or **existing and empty** folder.

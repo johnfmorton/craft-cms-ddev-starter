@@ -23,3 +23,6 @@ db-seed/*.sql.zip
 # ignore *.crt and *.key files
 *.crt
 *.key
+
+# Don't save package-lock, when we're fresh installing.
+package-lock.json

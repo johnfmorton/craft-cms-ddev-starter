@@ -23,3 +23,7 @@ db-seed/*.sql.zip
 # ignore *.crt and *.key files
 *.crt
 *.key
+
+# If you're building locally and then pushing to the server, you may want the dist folder in your repo
+# if your build process is on the server, you may want to ignore it
+#/web/dist
