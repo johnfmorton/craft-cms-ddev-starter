@@ -8,6 +8,8 @@
 /storage/**/storage/*
 !*/storage/.gitkeep
 
+
+
 # Build files
 node_modules/*
 
@@ -26,3 +28,12 @@ db-seed/*.sql.zip
 
 # Don't save package-lock, when we're fresh installing.
 package-lock.json
+
+# Don't save config/project/* in the repo
+config/project/*
+
+# Don't store config/license.key* in the repo
+config/license.key*
+
+# Don't store the /web/dist folder in the repo
+/web/dist
