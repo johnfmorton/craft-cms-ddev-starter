@@ -2,7 +2,7 @@
 
 This is a WIP starter project. 
 
-The installation process is heavily inspired by [Craft CMS 4 Starter Kit](https://github.com/onedarnleyroad/craftcms) by [onedarnleyroad](https://www.onedarnleyroad.com/).
+The installation process is **heavily inspired** by [Craft CMS 4 Starter Kit](https://github.com/onedarnleyroad/craftcms) by [onedarnleyroad](https://www.onedarnleyroad.com/).
 
 ## Installation
 
@@ -20,7 +20,31 @@ composer create-project johnfmorton/craft-cms-5-ddev-starter PATH --no-install
 Make sure that `PATH` is a **new** or **existing and empty** folder.
 
 
-johnfmorton/craft-cms-5-ddev-starter
+### Option 2: With Git CLI
+
+Alternatively you can clone the repo via the Git CLI:
+
+```shell
+git clone git@github.com:johnfmorton/craft-cms-5-ddev-starter.git PATH
+```
+
+Make sure that `PATH` is a **new** _or_ **existing and empty** folder.
+
+Next, you'll want to discard the existing `/.git` directory. In the terminal, run:
+
+```shell
+cd PATH
+rm -rf .git
+```
+
+Last, clean up and set some default files for use:
+
+```shell
+cp .env.example .env
+mv -f composer.json.default composer.json
+mv -f .gitignore.default .gitignore
+rm CHANGELOG.md && rm LICENSE.md && rm README.md
+```
 
 
 ## Configuring DDEV
