@@ -14,7 +14,7 @@ you can use `create-project` to pull the latest tagged release.
 Open terminal prompt, and run:
 
 ```shell
-composer create-project johnfmorton/craft-cms-5-ddev-starter PATH --no-install
+composer create-project johnfmorton/craft-cms-ddev-starter PATH --no-install
 ```
 
 Make sure that `PATH` is a **new** or **existing and empty** folder.
@@ -25,7 +25,7 @@ Make sure that `PATH` is a **new** or **existing and empty** folder.
 Alternatively you can clone the repo via the Git CLI:
 
 ```shell
-git clone git@github.com:johnfmorton/craft-cms-5-ddev-starter.git PATH
+git clone git@github.com:johnfmorton/craft-cms-ddev-starter.git PATH
 ```
 
 Make sure that `PATH` is a **new** _or_ **existing and empty** folder.
