@@ -22,6 +22,9 @@ install: up build
 	ddev exec php craft install \
 		$(filter-out $@,$(MAKECMDGOALS))
 	ddev exec php craft plugin/install vite
+	ddev exec php craft plugin/install ckeditor
+	ddev exec php craft plugin/install cookies
+	ddev exec php craft plugin/install minify
 up:
 	if [ ! "$$(ddev describe | grep OK)" ]; then \
         ddev auth ssh; \
