@@ -22,4 +22,16 @@ window.Alpine = Alpine
 
 Alpine.start()
 
+
+// Import the ProgressiveShareButton component
+// https://www.npmjs.com/package/progressive-share-button
+import {ProgressiveShareButton} from 'progressive-share-button';
+// Initialize the component
+ProgressiveShareButton();
+
+import { externalLinks } from './utils';
+
+// on DOMContentLoaded make external links open in new tab
+document.addEventListener('DOMContentLoaded', externalLinks)
+
 console.log('Hello, world.');
