@@ -1,0 +1,33 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "twigSingleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "avoid",
+  "proseWrap": "preserve",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 4,
+        "useTabs": false,
+        "printWidth": 80
+      }
+    }
+  ],
+  "twigMultiTags": [
+    "nav,endnav",
+    "switch,case,default,endswitch",
+    "ifchildren,endifchildren",
+    "cache,endcache",
+    "js,endjs"
+  ],
+
+  "plugins": ["@zackad/prettier-plugin-twig-melody", "prettier-plugin-tailwindcss"]
+}

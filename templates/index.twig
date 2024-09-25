@@ -1,0 +1,23 @@
+{% extends "_base/index.twig" %}
+
+{% block content %}
+    <div class=" max-w-screen-sm text-left mx-auto flex gap-y-1 flex-col bg-white border p-10 rounded-md shadow-md">
+      <h1 class="text-xl font-extrabold">Starter Craft CMS site</h1>
+      <p>This starter includes the following:</p>
+      <p>
+      <ul class="text-xs list-inside list-decimal">
+      <li>DDEV</li>
+      <li>Makefile - <span class='font-mono bg-gray-200 px-1'>make dev</span> or <span class='font-mono bg-gray-200 px-1'>make build</span></li>
+        <li>Vite build system</li>
+        <li>Critical CSS</li>
+        <li>Favicon build system</li>
+        <li>PostCSS</li>
+        <li>Tailwind CSS</li>
+        <li>Partytown</li>
+        <li>Progressive Share Button</li>
+        <li x-data="{ message: 'Alpine.js' }" x-text="message">Alpine.js is not installed</li>
+
+      </ul>
+      </p>
+    </div>
+{% endblock %}

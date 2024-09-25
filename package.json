@@ -1,0 +1,42 @@
+{
+  "name": "craft-cms-5-starter",
+  "version": "1.0.0",
+  "description": "Bespoken Plugin Demo website",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production vite build",
+    "serve": "NODE_ENV=dev vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnfmorton/craft-cms-5-starter.git"
+  },
+  "keywords": [
+    "craftcms"
+  ],
+  "author": "John F Morton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnfmorton/craft-cms-5-starter/issues"
+  },
+  "homepage": "https://github.com/johnfmorton/craft-cms-5-starter#readme",
+  "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
+    "alpinejs": "^3.14.1",
+    "progressive-share-button": "^1.0.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "postcss-import": "^16.1.0",
+    "rollup-plugin-critical": "^1.0.13",
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.3.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-favicon2": "^1.1.5",
+    "vite-plugin-manifest-sri": "^0.1",
+    "vite-plugin-restart": "^0.4.1"
+  }
+}

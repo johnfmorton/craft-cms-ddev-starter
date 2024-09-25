@@ -1,0 +1,86 @@
+{#
+In the nginx file for the staging ang production site, a cookied called "pill"
+will be set to "blue" or "red". This is the A/B split test cookie.
+
+Below we set a Twig variable called "abtestVariant" based on what the cookie is set to.
+It will default to "blue", when no cookie can be retrieved.
+#}
+
+{% set abtestVariant = craft.cookies.get('pill') | default('blue') %}
+
+{#
+From within the Craft CMS admin panel there is a tab in the Globals to define
+what the name is that will be sent to Google Analytics during an A/B test.
+
+If these values are not set in the control panel, they will default to
+blue = version_a
+red = version_b
+
+Below sets the value properly.
+#}
+
+{% if abtestVariant is same as('blue') %}
+{% set contentVariantName = splitTesting.ga_version_a_value ?? 'version_a' %}
+{% else %}
+{% set contentVariantName = splitTesting.ga_version_b_value ?? 'version_b' %}
+{% endif %}
+
+{#{% do seomatic.script.get('googleTagManager').dataLayer({#}
+{#'contentVersion': contentVariantName#}
+{#}) %}#}
+{#{% cache globally using key (craft.app.request.pathInfo ~ abtestVariant) %}#}
+{# {% minify html %} #}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <base href="{{ siteUrl }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {# -- Favicons, webapp manifests, etc. -- #}
+  {{ craft.vite.inline("@webroot/dist/assets/favicons/webapp.html") }}
+
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#2d89ef">
+
+  <!-- dist/~partytown is where vite rollup copy placed scripts -->
+  <script src="/dist/~partytown/partytown.js"></script>
+
+  {# <script type="text/partytown" defer data-domain="changeme.com" src="https://changeme.com/script.js"></script> #}
+<!-- Critical CSS -->
+    {{ craft.vite.includeCriticalCssTags() }}
+    <!-- End Critical CSS -->
+  <style>
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+{% endblock headCss %}
+  </style>
+{{ craft.vite.script("src/js/app.ts", true) }}
+</head>
+
+<body class="bg-white min-h-dvh ">
+{# {% endminify %} #}
+  <main class="flex flex-col min-h-dvh">
+    <div class="flex-shrink">
+      {% include('_partials/header.twig') %}
+    </div>
+    <div class="flex-grow bg-gradient-to-br from-slate-200 via-slate-50 to-slate-400 flex align-middle flex-col justify-center text-center p-10">
+      {% block content %}
+      You should extend this template and override this block with your content.
+      {% endblock %}
+    </div>
+    <div class="flex-shrink">
+      {% include('_partials/footer.twig') %}
+    </div>
+  </main>
+
+
+  {% block extraJS %}
+  {% endblock %}
+</body>
+
+</html>
+{#{% endcache %}#}

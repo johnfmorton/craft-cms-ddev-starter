@@ -1,0 +1,25 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+
+#Craft storage
+!/storage/
+/storage/**/storage/*
+!*/storage/.gitkeep
+
+# Build files
+node_modules/*
+
+# MISC FILES
+.cache
+
+# Database seed files
+db-seed/*.sql
+db-seed/*.sql.zip
+!db-seed/.gitkeep
+!db-seed/starter-v*.sql.zip
+
+# ignore *.crt and *.key files
+*.crt
+*.key
