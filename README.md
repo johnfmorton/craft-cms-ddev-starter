@@ -32,7 +32,6 @@ mv -f .gitignore.default .gitignore
 rm CHANGELOG.md && rm LICENSE.md && rm README.md
 ```
 
-
 ## Configuring DDEV
 
 _Note: This section is optional. If you are simply test-driving this project, feel free to skip to the next section. ⚡_
