@@ -37,3 +37,4 @@ config/license.key*
 
 # Don't store the /web/dist folder in the repo
 /web/dist
+*.psd

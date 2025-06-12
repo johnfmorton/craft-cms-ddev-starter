@@ -1,8 +1,25 @@
 # Craft CMS 5 Starter Kit
 
-This is a WIP starter project. 
+This is an always-a-WIP starter project for Craft CMS.
 
 The installation process is **heavily inspired** by [Craft CMS 4 Starter Kit](https://github.com/onedarnleyroad/craftcms) by [onedarnleyroad](https://www.onedarnleyroad.com/).
+
+![Craft CMS 5 Starter Kit Screenshot](docs/screenshot.jpg)
+
+## Features
+
+This starter includes the following pre-configured features:
+
+1. ddev - for local development
+2. Makefile - make dev or make build
+3. Vite build system preconfigured
+4. Critical CSS preconfigured - expects an Apple Silicon Mac
+5. Favicon build system preconfigured w PSD template file
+6. Tailwind CSS v4
+7. Partytown
+8. Progressive Share Button
+9. Alpine.js
+10. External links open in a new window
 
 ## Installation
 
