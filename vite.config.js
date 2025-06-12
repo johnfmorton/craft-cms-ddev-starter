@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 import manifestSRI from 'vite-plugin-manifest-sri'
 import path from 'path'
 import viteCompression from 'vite-plugin-compression'
@@ -41,6 +42,7 @@ export default defineConfig(({ command }) => ({
     }
   },
   plugins: [
+
     // ----------------------------------------------------------------------
     // Reference: https://partytown.qwik.dev/
     // ----------------------------------------------------------------------
@@ -96,7 +98,8 @@ export default defineConfig(({ command }) => ({
         developerURL: 'https://supergeekery.com',
         display: 'minimal-ui'
       }
-    })
+    }),
+    tailwindcss()
   ],
   publicDir: path.resolve(__dirname, 'src/public'),
   resolve: {

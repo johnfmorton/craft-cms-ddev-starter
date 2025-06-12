@@ -5,49 +5,13 @@
  *
  */
 
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
+@layer state, properties, base, theme, components, utilities;
+
+/*
+ * ----------------------------------------------------------------------
+ * Import the tailwind config.
+ * ----------------------------------------------------------------------
+ * All Tailwind CSS classes are defined in the tailwind-config.css file for
+ * organization and to avoid the need to use the tailwind.config.js file.
  */
-
-@import "tailwindcss/base";
-
-/**
- * This injects any component classes registered by plugins.
- *
- */
-@import "tailwindcss/components";
-
-/**
- * Here we add custom component classes; stuff we want loaded
- * *before* the utilities so that the utilities can still
- * override them.
- *
- */
-
-/* @import './components/webfonts.css'; */
-/* @import "components/typography.css";
- */
-
-@import "global.css";
-
-/**
- * Include styles for individual pages
- *
- */
-/* @import "jmx2.css"; */
-
-/* @import './pages/welcome.css'; */
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- */
-@import "tailwindcss/utilities";
-
-/**
-  * Include vendor css.
-  *
-  */
-/* @import "vendor.css"; */
+@import './tailwind-config.css';

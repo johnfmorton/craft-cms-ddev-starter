@@ -1,0 +1,36 @@
+/**
+ * This is the entry point for the tailwind config.
+ * Note: With Tailwind CSS v4, the use of the tailwind.config.js file is no longer
+ * the recommened way to configure Tailwind. Instead, we use a CSS file to
+ * configure Tailwind.
+ *
+ * Reference:
+ * 1. https://tailwindcss.com/blog/tailwindcss-v4#css-first-configuration
+ * 2. https://tailwindcss.com/docs/theme
+ */
+
+@import "tailwindcss" source("../../templates/");
+
+/*
+ * ----------------------------------------------------------------------
+ * Sample: Define the mint color palette.
+ * ----------------------------------------------------------------------
+ */
+@theme {
+  --color-black-text: oklch(0.373 0.034 259.733);
+  --color-mint-100: oklch(0.92 0.11 178);
+  --color-mint-200: oklch(0.88 0.11 178);
+  --color-mint-300: oklch(0.84 0.11 178);
+  --color-mint-400: oklch(0.80 0.11 178);
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-mint-600: oklch(0.68 0.11 178);
+  --color-mint-700: oklch(0.64 0.11 178);
+  --color-mint-800: oklch(0.60 0.11 178);
+  --color-mint-900: oklch(0.56 0.11 178);
+}
+
+
+body {
+  /* default text color to a more pleasing black color */
+  color: var(--color-black-text);
+}
