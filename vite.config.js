@@ -7,7 +7,9 @@ import { ViteFaviconsPlugin } from 'vite-plugin-favicon2'
 import { partytownVite } from '@builder.io/partytown/utils'
 import critical from 'rollup-plugin-critical'
 
-// https://vitejs.dev/config/
+// ----------------------------------------------------------------------
+// Reference: https://vitejs.dev/config/
+// ----------------------------------------------------------------------
 export default defineConfig(({ command }) => ({
   base: command === 'serve' ? '' : '/dist/',
   build: {
@@ -21,7 +23,13 @@ export default defineConfig(({ command }) => ({
          app: 'src/js/app.ts'
       },
       output: {
-        // example of manual chunking for a specific module
+        // ----------------------------------------------------------------------
+        // Example of manual chunking for a specific module
+        // ----------------------------------------------------------------------
+        // This is useful if you want to split out a specific module into a
+        // separate chunk. In this example, we are splitting out the
+        // progressive-share-button module into a separate chunk.
+        // ----------------------------------------------------------------------
         manualChunks: {
           'progressive-share-button': ['progressive-share-button'],
         }
@@ -33,6 +41,14 @@ export default defineConfig(({ command }) => ({
     }
   },
   plugins: [
+    // ----------------------------------------------------------------------
+    // Reference: https://partytown.qwik.dev/
+    // ----------------------------------------------------------------------
+    // Partytown is a library that allows you to run scripts in a separate
+    // thread from the main thread. This is useful for running scripts that
+    // are not needed immediately, such as analytics or social media sharing
+    // buttons.
+    // ----------------------------------------------------------------------
     partytownVite({
       dest: path.resolve('web/dist/', '~partytown')
     }),
@@ -49,6 +65,18 @@ export default defineConfig(({ command }) => ({
       criticalPages: [
         { uri: '', template: 'index' },
       ],
+      // ----------------------------------------------------------------------
+      // About Critical CSS rebase rule:
+      // ----------------------------------------------------------------------
+      // Rebase the critical CSS to the root of the site
+      // This useful if you generate the critical CSS from a different domain
+      // than the one you are serving the site from. For example, if you are
+      // generating the critical CSS from your local DDEVserver, you can set the
+      // from domain to the staging server and the to domain to the production
+      // server. In this example, we are generating the critical CSS from our
+      // local DDEV server and serving it from the production server, which is
+      // using / to get to the root of the site.
+      // ----------------------------------------------------------------------
       criticalConfig: {
         rebase: {
           from: 'https://craft-cms-5-starter.ddev.site/',
